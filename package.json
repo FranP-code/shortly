@@ -1,0 +1,33 @@
+{
+	"name": "url-shorter",
+	"description": "",
+	"version": "1.0.0",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node src/index.js",
+		"dev": "nodemon src/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/monatheoctocat/my_package.git"
+	},
+	"keywords": [],
+	"author": "FranP-Code",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/monatheoctocat/my_package/issues"
+	},
+	"homepage": "https://github.com/monatheoctocat/my_package",
+	"dependencies": {
+		"@fastify/jwt": "^6.5.0",
+		"fastify": "^4.10.2"
+	},
+	"devDependencies": {
+		"eslint": "^8.0.1",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.25.2",
+		"eslint-plugin-n": "^15.0.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"nodemon": "^2.0.20"
+	}
+}
