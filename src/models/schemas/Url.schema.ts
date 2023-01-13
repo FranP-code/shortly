@@ -5,6 +5,7 @@ export interface IUrl {
     url: string
     dateCreated: Date
     uploadedByUser: string
+    metaData: Object
 }
 
 export const urlSchema = new Schema<IUrl>(
@@ -25,6 +26,10 @@ export const urlSchema = new Schema<IUrl>(
         },
         uploadedByUser: {
             type: String,
+            required: true,
+        },
+        metaData: {
+            type: Object,
             required: true,
         },
     },

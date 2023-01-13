@@ -1,4 +1,4 @@
-export default function (metaData: any) {
+export default function (metaData: any, url: string) {
     return `
     <!DOCTYPE html>
     <html>
@@ -10,7 +10,7 @@ export default function (metaData: any) {
     </head>
     <body>
         <script>
-            window.location.href = "${metaData.url}";
+            window.location.href = "${url}";
         </script>
     </body>
     </html>

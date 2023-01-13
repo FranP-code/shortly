@@ -1,4 +1,5 @@
 /* eslint-disable quotes */
+import getMetaData from 'metadata-scraper'
 import { decrypt } from '../../scripts/crypto'
 import generateId from '../../scripts/generateId'
 import isUrl from '../../scripts/isUrl'
@@ -35,11 +36,13 @@ export async function createUrl(
         if (
             decrypt({ content: user.password, iv: user.crypto.iv }) === password
         ) {
+            const metaData = await getMetaData(url)
             const newUrl: IUrl = {
                 id: generateId(5),
                 url,
                 dateCreated: new Date(),
                 uploadedByUser: user.id,
+                metaData,
             }
             return UrlModel.create(newUrl)
         }

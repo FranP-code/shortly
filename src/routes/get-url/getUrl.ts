@@ -1,5 +1,4 @@
 import { Router, Request, Response } from 'express'
-import getMetaData from 'metadata-scraper'
 import { getUrlById } from '../../models/queries/Url.queries'
 import generateGetUrlPage from '../../pages/getUrl/generateGetUrlPage'
 import mongoErrorService from '../../services/mongoErrorService'
@@ -14,11 +13,10 @@ router.get('/:urlId', async (req: Request, res: Response) => {
         })
     }
     try {
-        const { url } = await getUrlById({
+        const { metaData, url } = await getUrlById({
             id: urlId,
         })
-        const metaData = await getMetaData(url)
-        res.send(generateGetUrlPage(metaData))
+        res.send(generateGetUrlPage(metaData, url))
     } catch (error) {
         console.log(error)
         res.status(400).json({
