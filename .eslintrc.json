@@ -1,15 +1,10 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true
-    },
-    "extends": "standard",
-    "overrides": [
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
     "rules": {
+        "semi": ["error", "never"],
+        "quotes": [2, "single"],
+        "no-unused-vars": "error",
+        "@typescript-eslint/no-unused-vars": "error"
     }
 }

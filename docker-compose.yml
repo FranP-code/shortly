@@ -7,4 +7,11 @@ services:
       - .:/usr/src
       - /usr/src/node_modules
     ports:
-      - "3000:3000"
+      - 3000:3000
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGODB_LINK: ${MONGODB_LINK}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
