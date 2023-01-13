@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 export default function databaseConnection() {
     mongoose
         .connect(
-            `mongodb://root:${process.env.MONGO_INITDB_ROOT_PASSWORD}@${process.env.MONGODB_LINK}`,
+            `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_LINK}`,
             {
                 serverSelectionTimeoutMS: 5000,
             }
