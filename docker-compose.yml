@@ -9,3 +9,5 @@ services:
     ports:
       - 3000:3000
       - 27017:27017
+    enviroment:
+      NODE_ENV: ${NODE_ENV}

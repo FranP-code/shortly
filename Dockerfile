@@ -12,4 +12,6 @@ WORKDIR "/usr/src"
 
 RUN yarn
 
-CMD ["yarn", "dev"]
+ARG NODE_ENV
+
+CMD if [ "$NODE_ENV" = "development" ] ; then yarn dev ; else yarn start ; fi
